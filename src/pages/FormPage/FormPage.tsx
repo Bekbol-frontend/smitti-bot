@@ -11,6 +11,8 @@ type FieldType = {
 function FormPage() {
   const [form] = Form.useForm();
 
+  const watchedValues = Form.useWatch([], form);
+
   const { tg } = useTelegram();
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
@@ -29,7 +31,7 @@ function FormPage() {
     } else {
       tg.MainButton.show();
     }
-  }, [form, tg]);
+  }, [watchedValues, form, tg]);
 
   return (
     <div
