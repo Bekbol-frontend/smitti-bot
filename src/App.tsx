@@ -1,4 +1,4 @@
-import { Layout } from "antd";
+import { Layout, ConfigProvider } from "antd";
 import MyHeader from "./widgets/MyHeader/MyHeader";
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
@@ -8,17 +8,26 @@ const { Content } = Layout;
 
 function App() {
   return (
-    <Layout className="layout">
-      <MyHeader />
-      <Layout className="layout-content">
-        <Content className="content">
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/form" element={<FormPage />} />
-          </Routes>
-        </Content>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorBgContainer: "var(--tg-theme-bg-color)",
+          colorText: "var(--tg-theme-text-color)",
+        },
+      }}
+    >
+      <Layout className="layout">
+        <MyHeader />
+        <Layout className="layout-content">
+          <Content className="content">
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/form" element={<FormPage />} />
+            </Routes>
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </ConfigProvider>
   );
 }
 
