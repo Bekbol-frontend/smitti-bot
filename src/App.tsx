@@ -11,7 +11,7 @@ function App() {
     <Layout className="layout">
       <MyHeader />
       <Layout className="layout-content">
-        <Content>
+        <Content className="content">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/form" element={<FormPage />} />
