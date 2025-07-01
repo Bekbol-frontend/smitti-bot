@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select, type FormProps } from "antd";
+import { Form, Input, Select, type FormProps } from "antd";
 import { useTelegram } from "../../hooks/useTelegram";
 import { useEffect } from "react";
 
@@ -74,12 +74,6 @@ function FormPage() {
               { value: "legal", label: "Юр. Лицо" },
             ]}
           />
-        </Form.Item>
-
-        <Form.Item label={null}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
         </Form.Item>
       </Form>
     </div>
